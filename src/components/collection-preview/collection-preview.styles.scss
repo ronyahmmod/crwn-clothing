@@ -1,0 +1,18 @@
+.collection-preview {
+  display: flex;
+  flex-direction: column;
+
+  &:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
+  &__title {
+    font-size: 28px;
+    margin-bottom: 25px;
+  }
+
+  &__preview {
+    display: flex;
+    justify-content: space-between;
+  }
+}

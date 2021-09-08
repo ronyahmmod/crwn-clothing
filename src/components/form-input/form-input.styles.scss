@@ -1,0 +1,35 @@
+$sub-color: #333;
+$main-color: #000;
+@mixin shrink {
+  top: -20px;
+}
+
+.form-input {
+  position: relative;
+  margin: 30px 0;
+  &__input {
+    padding: 10px 0;
+    width: 95%;
+    border: none;
+    font-size: 16px;
+    transition: all 0.3s;
+    outline: none;
+    border-bottom: 1px solid $sub-color;
+
+    &:focus ~ label {
+      @include shrink;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    text-transform: capitalize;
+    transition: all 0.2s;
+
+    &--shrink {
+      @include shrink;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.signin {
+  width: 30vw;
+
+  &__title {
+    margin: 10px 0;
+  }
+
+  &__btn-group {
+    display: flex;
+
+    & > * {
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
+  }
+}
