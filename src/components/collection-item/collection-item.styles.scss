@@ -3,6 +3,7 @@
   width: 23%;
   height: 330px;
   flex-direction: column;
+  transition: all .2s;
 
   &__image {
     width: 100%;
@@ -14,5 +15,24 @@
   &__footer {
     display: flex;
     justify-content: space-between;
+    position: relative;
+    .custom-button {
+      position: absolute;
+      margin-top: -50px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      display: none;
+      background-color: rgba(0,0,0,.4);
+
+      &:hover {
+        background-color: rgba(#fff, .4);
+        border: 1px solid transparent;
+      }
+    }
+  } 
+
+  &:hover .custom-button {
+    display: inline-block;
   }
 }
