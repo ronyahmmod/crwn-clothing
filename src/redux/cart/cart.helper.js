@@ -1,4 +1,4 @@
-export const cartHelper = (newItem, items) => {
+export const addItemsToCart = (newItem, items) => {
   const foundedItem = items.find((item) => item.id === newItem.id);
   if (foundedItem) {
     return items.map((item) =>
@@ -6,4 +6,18 @@ export const cartHelper = (newItem, items) => {
     );
   }
   return [...items, { ...newItem, quantity: 1 }];
+};
+
+export const removeItemsToCart = (newItem, items) => {
+  const foundedItem = items.find((item) => item.id === newItem.id);
+  if (foundedItem) {
+    if (foundedItem.quantity === 1) {
+      return items.filter((curItem) => curItem.id !== newItem.id);
+    }
+    return items.map((curItem) =>
+      curItem.id === newItem.id
+        ? { ...curItem, quantity: curItem.quantity - 1 }
+        : curItem
+    );
+  }
 };
