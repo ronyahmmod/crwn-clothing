@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { selectTotalPriceCount } from '../../redux/cart/cart.selectors';
 import { selectCartItems } from '../../redux/cart/cart.selectors';
 import { createStructuredSelector } from 'reselect';
+import CheckoutForm from '../../components/checkout-form/checkout-form.component';
 
 function CheckoutPage({ totlaPriceCount, cartItems }) {
   return (
@@ -22,6 +23,12 @@ function CheckoutPage({ totlaPriceCount, cartItems }) {
 
       <div className="checkout__footer">
         <div className="checkout__foot">Total : $ {totlaPriceCount}</div>
+        <div className="checkout__warn">
+          Please use this card for testing perpose: 4000 0025 0000 3155
+        </div>
+        <div className="checkout__button">
+          <CheckoutForm price={totlaPriceCount} />
+        </div>
       </div>
     </div>
   );

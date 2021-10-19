@@ -27,8 +27,14 @@
 
   &__footer {
     display: flex;
+    flex-direction: column;
     width: 80%;
-    justify-content: flex-end;
+    align-items: flex-end;
+
+    & > * {
+      padding-right: 50px;
+      margin-top: 20px;
+    }
   }
 
   &__foot {
@@ -37,7 +43,18 @@
     align-items: center;
     font-size: 20px;
     font-weight: 600;
-    padding-right: 50px;
+
     text-transform: uppercase;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+
+    button {
+      width: 40%;
+    }
   }
 }
